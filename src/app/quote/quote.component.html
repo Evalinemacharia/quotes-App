@@ -4,26 +4,27 @@
     <hr>
      
     <div class="row">
-        <div class="col-md-16">
-            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+        <div class="col-md-8">
+            
             <div *ngFor='let quote of quote;let i = index'>
                 <!-- <div class="card-body" appHighlightQuote *ngIf="highlightHighest() === quote.upVote && quote.upVote > 0">
                     <li appStrikethrough>{{quote.quote}} due on {{quote.completeDate}}</li>  -->
                 <ul>
-                     <li appHighlight> <span class="text-danger" > {{quote.id}}</span> {{quote.Quote}} <br> {{quote.Author}} {{quote.Upvotes}} {{quote.downvotes}} {{quote.completeDate
+                     <li appHighlight> <span class="text-danger" ></span> {{quote.Quote}} <br> {{quote.Author}} <span><p>Posted by; {{quote.Postedby}} </p></span>  {{quote.completeDate
                    |date| uppercase }} </li> 
                    <!-- <app-quote-detail [Quote]='quote'></app-quote-detail>   -->
                 </ul>
-                <!-- <app-quote-detail *ngIf='quote.showQuote' [quote]='quote' (isComplete) = 'quoteDelete($event,i)'></app-quote-detail> -->
+                <button (click)="showQuote(i)" >show more</button>
+                 <app-quote-detail *ngIf='quote.showDetails'(isComplete) = 'delete($event,i)'   ></app-quote-detail> 
             </div>
             
-          <div class="col-md-8">
-            <app-quote-form></app-quote-form>
+          <div class="col-md-4">
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
           </div>
         
         <p *ngIf='quote.length > 5'>You have too many goals</p>
       </div>
-        </div>
+    </div>
 
         
     </div>
