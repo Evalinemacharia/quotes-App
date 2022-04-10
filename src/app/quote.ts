@@ -1,21 +1,29 @@
 // import { StringMapWithRename } from "@angular/compiler/src/compiler_facade_interface";
 
    export class Quote {
-      id: number;
-    //   Author: string;
-      quote: string;      
+       id!: number;
+       Quote!: string; 
+        Author!: string;      
+       Upvotes!: number;
        downvotes: number;
-       Upvotes: number;
+    
+       completeDate!:Date;
+       
+     
        
        
     
 
-      constructor(id: number, quote: string, upvotes: number, downvotes: number){
+      constructor(id:number ,Quote: string, Author: string, Upvotes: number,  downvotes: number,completeDate: Date) {
             this.id = id;
-           this.quote = quote;
-           this.Upvotes = upvotes;
+            this.Quote = Quote;
+            this.Author =  Author;
+           this.Upvotes = Upvotes;
            this.downvotes = downvotes; 
-        //    this.Author =  Author;
+           this.completeDate =  completeDate;
+           
+           
+            
        }
     
    }

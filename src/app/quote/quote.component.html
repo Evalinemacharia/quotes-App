@@ -2,15 +2,17 @@
 <div class="container">
     <h1>My quote</h1>
     <hr>
-     <!-- <app-form (emitQuote)="addQuote($event)"></app-form> --> -->
+     
     <div class="row">
         <div class="col-md-16">
             <div *ngFor='let quote of quote;let i = index'>
-                 <!-- <p appHighlight *ngIf="highestUpvote()===quote.upvotes && quote.upvotes>0">{{quote.quote}}</p>
-          <p  *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">{{quote.quote}}</p> --> -->
+                <!-- <div class="card-body" appHighlightQuote *ngIf="highlightHighest() === quote.upVote && quote.upVote > 0">
+                    <li appStrikethrough>{{quote.quote}} due on {{quote.completeDate}}</li>  -->
                 <ul>
-                    <li appHighlight> <span class="text-danger" > {{quote.id}}</span> {{quote.quote}} {{quote.Upvotes}} </li> 
+                     <li appHighlight> <span class="text-danger" > {{quote.id}}</span> {{quote.Quote}} <br> {{quote.Author}} {{quote.Upvotes}} {{quote.downvotes}} {{quote.completeDate
+                   |date| uppercase|dateCount }} </li>   
                 </ul>
+                <app-quote-detail *ngIf='quote.showQuote' [quote]='quote' (isComplete) = 'quoteDelete($event,i)'></app-quote-detail>
             </div>
             
           <div class="col-md-8">
@@ -21,8 +23,5 @@
       </div>
         </div>
 
-         <!-- <button class="btn btn-primary" (click)="upvotes(0)">Upvote</button>
-        <button class="btn" (click)="downvotes(0)">Downvotes</button> -->
-         <!-- </div>button class="btn btn-danger" (click)="delete quote(0)">Delete</button> --> -->
-         
+        
     </div>
