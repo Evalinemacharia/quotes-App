@@ -11,7 +11,7 @@
                     <li appStrikethrough>{{quote.quote}} due on {{quote.completeDate}}</li>  -->
                 <ul>
                      <li appHighlight> <span class="text-danger" ></span> {{quote.Quote}} <br> {{quote.Author}} <span><p>Posted by; {{quote.Postedby}} </p></span>  {{quote.completeDate
-                   |date| uppercase }} </li> 
+                   |date| uppercase }} {{quote.completeDate|dateCount}} days ago. </li> 
                    <!-- <app-quote-detail [Quote]='quote'></app-quote-detail>   -->
                 </ul>
                 <button (click)="showQuote(i)" >show more</button>
