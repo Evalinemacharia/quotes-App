@@ -1,5 +1,5 @@
 
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component,  Input, OnInit,  } from '@angular/core';
 import { Quote } from '@angular/compiler';
 
 @Component({
@@ -8,24 +8,16 @@ import { Quote } from '@angular/compiler';
   styleUrls: ['./quote-detail.component.css']
 })
 export class QuoteDetailComponent implements OnInit {
-  isComplete: any;
+  @Input()
+  Quote!: Quote; 
+  constructor() { }
 
-  quoteDelete(complete:boolean){
-    this.isComplete.emit(complete);
+  ngOnInit() {
+  }
+
+  
   }
 
   
   
-  @Input() quote: Quote | undefined;
-  @Output() deleteQuote = new EventEmitter<boolean>();
 
-
-  Delete(yesDelete: boolean) { 
-    this.deleteQuote.emit(yesDelete);
-  }
-
-
-   ngOnInit(): void {
-   }
-
-}
