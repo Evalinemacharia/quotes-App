@@ -9,14 +9,16 @@ import { Quote } from '@angular/compiler';
 })
 export class QuoteDetailComponent implements OnInit {
   @Input()
-  Quotes!: Quote;
-  quotes: any;
+  quotes!: Quote;
+  // quotes!: any;Quo
   @Output () isComplete = new EventEmitter <boolean> ();
-  Upvotes(){
-    this.quotes.Upvotes+=1;
+  Upvotes:number=0
+  upvote(){
+    this.Upvotes+=1;
   }
-  downvotes(){
-    this.quotes.downvotes+=1;
+  downvotes:number =0
+  downvote(){
+    this.downvotes+=1;
 
   } 
   deleteQuote(complete:boolean){

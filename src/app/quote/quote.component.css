@@ -1,3 +1,21 @@
 .h1 {
     text-align: center;
 }
+.card {
+         width: 450px;     
+     background-color:beige;
+     margin-bottom: 20px;
+     
+     
+}
+.button-Quote {
+      /* padding: 10px;  */
+    margin-right: 40px;
+    margin-left: 40px; 
+    border-radius: 10px;
+    width: 100px;
+    align-content: center;
+}
+
+
+

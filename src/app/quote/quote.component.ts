@@ -13,10 +13,10 @@ export class QuoteComponent implements OnInit {
   }
   
   quote:Quote[] = [
-    new Quote(1,  "Do your best at all times","Austin",'jane', 0,0,new Date(2022, 2, 14)),
-      new Quote(2,  "Positive anything is better than negative nothing","EVA",'Nyash', 0,0,new Date(2022,4,12) ),
-      new Quote(3, "Miracles happen to those who believe in them","Bernhard Breson",'Eve',0,0,new Date(2022,1,10) ),
-      new Quote(4, "One positive thought can change your whole day","Zig Zaglar",'Cate',0,0,new Date(2022,2,5)),   
+    new Quote(1,  "Do your best at all times","Austin",'jane', 1,0,new Date(2022, 2, 14)),
+      new Quote(2,  "Positive anything is better than negative nothing","EVA",'Nyash', 3,0,new Date(2022,4,12) ),
+      new Quote(3, "Miracles happen to those who believe in them","Bernhard Breson",'Eve',1,0,new Date(2022,1,10) ),
+      new Quote(4, "One positive thought can change your whole day","Zig Zaglar",'Cate',3,0,new Date(2022,2,5)),   
    ];
 
    addNewQuote(quote:any){
@@ -25,6 +25,8 @@ export class QuoteComponent implements OnInit {
     quote.completeDate = new Date(quote.completeDate)
     this.quote.push(quote)
   }
+  collection: number[] = this.quote.map(quote=>quote.Upvotes)
+  highest = Math.max(...this.collection)
   highlightHighest() {
     /* function for getting quote with highest vote*/
     let quotesUpvote = []
@@ -39,6 +41,7 @@ export class QuoteComponent implements OnInit {
     highestUpVote = quotesUpvote[0]
     return highestUpVote;
   }
+   
   // isShowMore = true
   showQuote (index:number){
     this.quote[index].showDetails = !this.quote[index].showDetails;
@@ -51,20 +54,29 @@ export class QuoteComponent implements OnInit {
 
       if (toDelete){
          this.quote.splice(index,1)
-      
+      }     
+    }  
   
-  }
+    
 }
+
+
+
+
+   constructor() {}
+
+  //  highestUpvote(){
+  //   this.preNum = 0
+  //   this.lastNum = 0
+
+  //   for(this.counter=0 ; this.counter < this.quotes.length; this.counter++) {
+  //     this.lastNum = this.quotes[this.counter].upvotes;
+  //     if(this.lastNum > this.preNum){this.preNum = this.lastNum}
+  //   }
+  //   return  this.preNum
+  // }
+
 }
-
-
-
-
-//   constructor() {}
-
-//   ngOnInit():void {}
-//  }
- 
 
 
 
@@ -73,13 +85,4 @@ export class QuoteComponent implements OnInit {
 
 
 
-
-
-// function constructor() {
-//   throw new Error('Function not implemented.');
-// }
-
-// function ngOnInit() {
-//   throw new Error('Function not implemented.');
- }
 

@@ -20,7 +20,7 @@
       
                 <label for="Quote">Quote</label>
                 <!-- <input type="text" required class="form-control" id="name"> -->
-                <input type="text" class="form-control" id="name" [(ngModel)]="newGoal.Quote" name="name" #name='ngModel' required>
+                <textarea class="form-control" id="quote"rows='3' [(ngModel)]="newGoal.Quote" name="quote" #quote='ngModel' required></textarea>
                 <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                  <p>Qoute is required</p>
                 
@@ -29,7 +29,7 @@
             <div class="form-group">
                 <label for="name">Author</label>
                 <!-- <input type="text" required class="form-control" id="name"> -->
-                <input type="text" class="form-control" id="name" [(ngModel)]="newGoal.Quote" name="name" #name='ngModel' required>
+                <input type="text" class="form-control" id="Author" [(ngModel)]="newGoal.Author" name="Author" #Author='ngModel' required>
                 <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
                  <p>Author is required</p>
                 
@@ -44,7 +44,7 @@
           
                     
                
-            </div>
+            </div><br>
             <button type="submit" class="btn btn-primary">Post Quote</button>
           </form>
       </div>  

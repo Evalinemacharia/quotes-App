@@ -1,22 +1,11 @@
- <!-- <p>{{Quote.quote}}</p> 
-<p>This quote will be complete in {{quote.completeDate|dateCount}} days</p>
-<button (click)= 'quoteDelete(true)'>Delete quote</button> -->
-<!-- <p>
-    {{Quote.quote}}
-  </p> -->
-  <!-- <div class="container-fluid" id="buttons">
-    <span class="card-subtitle mb-2">Posted by: <span id="submitter">{{quote.submitter}}</span>&nbsp;&nbsp;<span id="date"><span id="datecolor">{{quote.datePosted|date}}</span><span id="time"> <br> {{quote.datePosted|datePipe}} days ago.</span></span></span>
-    <br> <br>
-    <button class="btn btn-sm btn-success" (click)='upvote()'>{{quote.upVotes}} &nbsp; <i class="fa fa-thumbs-up" id="upvote" appHighlight></i></button> 
-    &nbsp;   &nbsp;
-    <button class="b   -->
+ 
         <div class="container-fluid" id="buttons">
             
             
-            <button class="btn btn-sm btn-success" (click)='Upvotes()'>{{quotes.Upvotes}} &nbsp;<i class="fa fa-thumbs-up" id="upvote" 
-                 class="fa fa-thumbs-up" id="upvote"></i> </button> 
+            <button class="btn btn-sm btn-success" (click)='upvote()'> Upvotes &nbsp;<i class="fa fa-thumbs-up" id="upvote" 
+                 class="fa fa-thumbs-up" id="upvote"></i> </button> {{Upvotes}} 
             &nbsp;   &nbsp;
-            <button class="btn btn-sm btn-danger" id="hate" (click)='downvotes()'>{{quotes.downvotes}} &nbsp;Dislikes <i class="fa fa-thumbs-down" id="downvote" ></i></button> 	
+            <button class="btn btn-sm btn-danger" id="hate" (click)='downvote()'>  &nbsp;Dislikes <i class="fa fa-thumbs-down" id="downvote" ></i></button> {{downvotes}} 	
             &nbsp;
              <button class="btn btn-sm btn-danger" id="deleted" (click)='deleteQuote(true)'> <i class="fa fa-trash" id="delete"></i></button>  
           </div> 
